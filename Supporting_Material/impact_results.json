@@ -1,0 +1,73 @@
+{
+  "plant": {
+    "tonnes_per_yr": 2400.0,
+    "baseline_sec_kwh_t": 650.0,
+    "grid_ef_kg_kwh": 0.71,
+    "adopting_foundries": 1000
+  },
+  "scenarios": {
+    "conservative": {
+      "kwh_saved_per_t": 16.7,
+      "sec_reduction_pct": 2.6,
+      "sec_after_kwh_t": 633.3,
+      "co2_intensity_before_kg_t": 461.5,
+      "co2_intensity_after_kg_t": 449.6,
+      "kwh_saved_per_yr": 40180,
+      "tariff_inr_kwh": 7.55,
+      "inr_energy_saved_per_yr": 303357,
+      "inr_tod_saved_per_yr": 114746,
+      "inr_subscription_per_yr": 48000,
+      "inr_net_saved_per_yr": 370103,
+      "kit_cost_inr": 150000,
+      "payback_months": 4.9,
+      "tco2_avoided_per_yr": 28.5,
+      "cycle_min_saved_per_heat": 7,
+      "cycle_reduction_pct": 9.3,
+      "national_gwh_per_yr": 40.2,
+      "national_inr_crore_per_yr": 30.3,
+      "national_tco2_per_yr": 28528
+    },
+    "likely": {
+      "kwh_saved_per_t": 33.2,
+      "sec_reduction_pct": 5.1,
+      "sec_after_kwh_t": 616.8,
+      "co2_intensity_before_kg_t": 461.5,
+      "co2_intensity_after_kg_t": 437.9,
+      "kwh_saved_per_yr": 79686,
+      "tariff_inr_kwh": 8.0,
+      "inr_energy_saved_per_yr": 637490,
+      "inr_tod_saved_per_yr": 355275,
+      "inr_subscription_per_yr": 48000,
+      "inr_net_saved_per_yr": 944765,
+      "kit_cost_inr": 87289,
+      "payback_months": 1.1,
+      "tco2_avoided_per_yr": 56.6,
+      "cycle_min_saved_per_heat": 13,
+      "cycle_reduction_pct": 17.3,
+      "national_gwh_per_yr": 79.7,
+      "national_inr_crore_per_yr": 63.7,
+      "national_tco2_per_yr": 56577
+    },
+    "stretch": {
+      "kwh_saved_per_t": 42.9,
+      "sec_reduction_pct": 6.6,
+      "sec_after_kwh_t": 607.1,
+      "co2_intensity_before_kg_t": 461.5,
+      "co2_intensity_after_kg_t": 431.1,
+      "kwh_saved_per_yr": 102919,
+      "tariff_inr_kwh": 8.0,
+      "inr_energy_saved_per_yr": 823356,
+      "inr_tod_saved_per_yr": 699399,
+      "inr_subscription_per_yr": 48000,
+      "inr_net_saved_per_yr": 1474754,
+      "kit_cost_inr": 87289,
+      "payback_months": 0.7,
+      "tco2_avoided_per_yr": 73.1,
+      "cycle_min_saved_per_heat": 18,
+      "cycle_reduction_pct": 24.0,
+      "national_gwh_per_yr": 102.9,
+      "national_inr_crore_per_yr": 82.3,
+      "national_tco2_per_yr": 73073
+    }
+  }
+}

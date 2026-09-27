@@ -1,0 +1,60 @@
+<section id="architecture" data-transition="fade" style="background:#F6F3EE; color:#2B2F36; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px">
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#C2410C">Architecture &amp; technical approach</p>
+    <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.15; color:#16181D">Edge-first, built for the foundry floor</h2>
+  </div>
+  <div style="display:flex; gap:12px; align-items:stretch">
+    <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#FBFAF7; border:1px solid #DED8CE; border-radius:16px; padding:28px">
+      <p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#C2410C">On the furnace</p>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:700; line-height:1.2; color:#16181D">Furnace sensors</h3>
+      <ul style="font-size:24px; line-height:1.4; color:#2B2F36">
+        <li>Panel meter, Modbus, 1 reading/s</li>
+        <li>Lid switch, thermocouple (optional)</li>
+        <li>Operator app: charge, scrap, grade</li>
+      </ul>
+    </div>
+    <x-shape kind="arrow-right" style="width:40px; height:24px; background:#C2410C; align-self:center"></x-shape>
+    <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#FBFAF7; border:1px solid #DED8CE; border-radius:16px; padding:28px">
+      <p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#C2410C">In the foundry</p>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:700; line-height:1.2; color:#16181D">Edge gateway</h3>
+      <ul style="font-size:24px; line-height:1.4; color:#2B2F36">
+        <li>Works offline, stores 7 days</li>
+        <li>Splits each melt into phases</li>
+        <li>Runs the melt model locally</li>
+        <li>Drives shop-floor prompts</li>
+      </ul>
+    </div>
+    <x-shape kind="arrow-right" style="width:40px; height:24px; background:#C2410C; align-self:center"></x-shape>
+    <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#FBFAF7; border:1px solid #DED8CE; border-radius:16px; padding:28px">
+      <p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#C2410C">Syncs when online</p>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:700; line-height:1.2; color:#16181D">MeltWise cloud</h3>
+      <ul style="font-size:24px; line-height:1.4; color:#2B2F36">
+        <li>Physics + ML: expected kWh per charge</li>
+        <li>Cause finder for excess kWh</li>
+        <li>Scheduler: moulds + ToD tariff</li>
+        <li>M&amp;V and carbon (CEA factor)</li>
+      </ul>
+    </div>
+    <x-shape kind="arrow-right" style="width:40px; height:24px; background:#C2410C; align-self:center"></x-shape>
+    <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#FBFAF7; border:1px solid #DED8CE; border-radius:16px; padding:28px">
+      <p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#C2410C">For people</p>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:30px; font-weight:700; line-height:1.2; color:#16181D">Apps &amp; systems</h3>
+      <ul style="font-size:24px; line-height:1.4; color:#2B2F36">
+        <li>Operator app, shop-floor screen</li>
+        <li>Manager dashboard (web)</li>
+        <li>Owner, buyer reports (WhatsApp, PDF)</li>
+        <li>Excel, Tally, ERP sync; open API</li>
+      </ul>
+    </div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:8px; background:#ECE7DF; border-radius:16px; padding:20px 28px">
+    <p style="font-size:24px; line-height:1.4; color:#2B2F36"><b>Stack:</b> Python (pandas, LightGBM, OR-Tools) · FastAPI · TimescaleDB · MQTT · React PWA · Modbus</p>
+    <p style="font-size:24px; line-height:1.4; color:#2B2F36"><b>Data model:</b> Furnace → Melt → Phase → Reading, plus Charge, Alert, Schedule and Batch report</p>
+    <p style="font-size:24px; line-height:1.4; color:#2B2F36"><b>Schneider fit:</b> reads EM6400NG / PowerLogic meters; feeds EcoStruxure or AVEVA over Modbus / OPC UA</p>
+  </div>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between; align-items:center; gap:32px">
+    <p style="font-size:24px; color:#5A6170">MeltWise · Yuva Yodha 2026 · Challenge 04: Smart Manufacturing</p>
+    <p style="font-size:24px; color:#5A6170">6</p>
+  </div>
+  <aside>Data flows left to right. On the furnace: the existing panel meter over Modbus, an optional lid switch and thermocouple, and the operator app. In the foundry: an edge gateway that keeps working when the internet drops, splits each melt into phases and runs the melt model locally, so prompts never wait for the cloud. In the cloud: the physics-plus-ML model is trained per furnace, a cause finder explains excess energy, an optimiser schedules melts, and a measurement-and-verification engine turns kWh into rupees and CO2. Everything is open standards, so it fits Schneider Electric meters and software.</aside>
+</section>

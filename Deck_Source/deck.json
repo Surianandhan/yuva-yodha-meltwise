@@ -1,0 +1,21 @@
+{
+  "v": 4,
+  "attachments": {},
+  "createdOnFiles": {
+    "at": "2026-09-25T16:12:51.793Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "faces": {
+    "space-grotesk": {"family": "Space Grotesk", "href": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap"},
+    "ibm-plex-sans": {"family": "IBM Plex Sans", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"}
+  },
+  "order": ["cover", "problem", "waste", "solution", "journey", "architecture", "whats-new", "impact", "business", "roadmap", "team"],
+  "cover": "cover",
+  "sections": {
+    "s1": {"description": "Why foundry melting wastes energy, and why it matters now", "start": "cover"},
+    "s2": {"description": "How MeltWise works for operators, managers and buyers", "start": "solution"},
+    "s3": {"description": "Impact, business model, roadmap and team", "start": "impact"}
+  },
+  "title": "MeltWise Pitch Deck"
+}

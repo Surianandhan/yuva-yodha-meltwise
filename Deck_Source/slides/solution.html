@@ -1,0 +1,52 @@
+<section id="solution" data-transition="fade" style="background:#F6F3EE; color:#2B2F36; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <p style="font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#C2410C">The solution</p>
+    <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.15; color:#16181D">MeltWise: one loop, run on every melt</h2>
+  </div>
+  <div style="display:flex; gap:16px; align-items:stretch">
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#FBFAF7; border:1px solid #DED8CE; border-radius:16px; padding:32px">
+      <div style="display:flex; align-items:center; justify-content:space-between">
+        <x-icon name="Activity" style="color:#C2410C; width:48px; height:48px"></x-icon>
+        <p style="font-size:24px; font-weight:600; letter-spacing:2px; color:#C2410C">01</p>
+      </div>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#16181D">Measure</h3>
+      <p style="font-size:24px; line-height:1.45; color:#2B2F36">Reads the furnace panel meter every second. Operators log charge, scrap mix and temperature.</p>
+    </div>
+    <x-shape kind="arrow-right" style="width:40px; height:24px; background:#C2410C; align-self:center"></x-shape>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#FBFAF7; border:1px solid #DED8CE; border-radius:16px; padding:32px">
+      <div style="display:flex; align-items:center; justify-content:space-between">
+        <x-icon name="Search" style="color:#C2410C; width:48px; height:48px"></x-icon>
+        <p style="font-size:24px; font-weight:600; letter-spacing:2px; color:#C2410C">02</p>
+      </div>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#16181D">Detect</h3>
+      <p style="font-size:24px; line-height:1.45; color:#2B2F36">A physics + ML model predicts the kWh this charge should need and names the cause of any excess.</p>
+    </div>
+    <x-shape kind="arrow-right" style="width:40px; height:24px; background:#C2410C; align-self:center"></x-shape>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#FBFAF7; border:1px solid #DED8CE; border-radius:16px; padding:32px">
+      <div style="display:flex; align-items:center; justify-content:space-between">
+        <x-icon name="Chat" style="color:#C2410C; width:48px; height:48px"></x-icon>
+        <p style="font-size:24px; font-weight:600; letter-spacing:2px; color:#C2410C">03</p>
+      </div>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#16181D">Guide</h3>
+      <p style="font-size:24px; line-height:1.45; color:#2B2F36">Live prompts at the furnace, in the operator's language: close the lid, add power, tap now.</p>
+    </div>
+    <x-shape kind="arrow-right" style="width:40px; height:24px; background:#C2410C; align-self:center"></x-shape>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#FBFAF7; border:1px solid #DED8CE; border-radius:16px; padding:32px">
+      <div style="display:flex; align-items:center; justify-content:space-between">
+        <x-icon name="Chart" style="color:#C2410C; width:48px; height:48px"></x-icon>
+        <p style="font-size:24px; font-weight:600; letter-spacing:2px; color:#C2410C">04</p>
+      </div>
+      <h3 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#16181D">Plan &amp; report</h3>
+      <p style="font-size:24px; line-height:1.45; color:#2B2F36">Schedules melts around the moulding line and solar-hour tariffs. Monthly savings and CO₂ reports.</p>
+    </div>
+  </div>
+  <div style="display:flex; gap:24px; align-items:center; background:#ECE7DF; border-radius:16px; padding:24px 32px">
+    <x-icon name="Lightning" style="color:#C2410C; width:40px; height:40px"></x-icon>
+    <p style="font-size:30px; line-height:1.4; color:#2B2F36">Offline-first edge gateway · ₹87k kit per furnace · nothing on the furnace changes · reads Schneider EM6400NG and PowerLogic meters</p>
+  </div>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between; align-items:center; gap:32px">
+    <p style="font-size:24px; color:#5A6170">MeltWise · Yuva Yodha 2026 · Challenge 04: Smart Manufacturing</p>
+    <p style="font-size:24px; color:#5A6170">4</p>
+  </div>
+  <aside>MeltWise runs one loop on every melt. Measure: it reads the furnace's own panel meter every second, and the operator logs the charge on a phone. Detect: a physics-plus-machine-learning model predicts how much energy this particular charge should need, and when the melt goes over, it names the cause. Guide: it tells the operator, in their language, while the metal is still in the furnace. Plan and report: it schedules melts around the moulding line and cheaper solar hours, and reports savings and CO2 per batch.</aside>
+</section>
