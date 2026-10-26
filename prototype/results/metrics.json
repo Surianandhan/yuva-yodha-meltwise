@@ -1,0 +1,605 @@
+{
+  "calibration": {
+    "baseline_sec_kwh_t": 647.7212384296897,
+    "best_practice_sec_kwh_t": 587.896715965299,
+    "cycle_min": 77.23916666666666,
+    "avoidable_kwh_t": {
+      "overshoot": 14.75453692548633,
+      "holding": 22.519476266097755,
+      "lid": 5.314669148417633,
+      "underpower": 4.6565590040981135,
+      "sand": 17.280758698573216
+    }
+  },
+  "model_accuracy_plant_a": {
+    "plant": {
+      "eta_factor": 1.0000369046007245,
+      "loss_factor": 1.1191641402908725,
+      "lid_factor": 1.1102742760980773
+    },
+    "learned_coefficients": {
+      "intercept": 24.792863744229088,
+      "base": 1.000825501333115,
+      "melt_loss": 1.1504737848164601,
+      "overshoot": 1.0376177416554668,
+      "holding": 1.1365980957752535,
+      "lid": 1.3090469315485858,
+      "underpower": 1.2738262113719498
+    },
+    "predicted_sec_mae_kwh_t": 9.31755408806649,
+    "predicted_sec_mape_pct": 1.4218733486511157,
+    "best_practice_mae_kwh_t": 10.091149691801323,
+    "best_practice_bias_kwh_t": 6.849435523907226,
+    "total_avoidable_mae_kwh_t": 12.207551775697542,
+    "total_avoidable_truth_mean_kwh_t": 66.3046702646322,
+    "causes": {
+      "overshoot": {
+        "truth_mean_kwh_t": 15.121267740848653,
+        "estimate_mean_kwh_t": 11.606707483514475,
+        "mae_kwh_t": 3.54764167965741,
+        "correlation": 0.9535256170669818,
+        "precision": 1.0,
+        "recall": 0.979933110367893
+      },
+      "holding": {
+        "truth_mean_kwh_t": 23.1742604259477,
+        "estimate_mean_kwh_t": 20.420704902044804,
+        "mae_kwh_t": 2.862502049493368,
+        "correlation": 0.992574628374636,
+        "precision": 0.9946236559139785,
+        "recall": 0.9487179487179487
+      },
+      "lid": {
+        "truth_mean_kwh_t": 5.524976180965131,
+        "estimate_mean_kwh_t": 6.527743171951008,
+        "mae_kwh_t": 1.0969182588871842,
+        "correlation": 0.9901182282672539,
+        "precision": 0.8884120171673819,
+        "recall": 0.971830985915493
+      },
+      "underpower": {
+        "truth_mean_kwh_t": 5.3289911962596275,
+        "estimate_mean_kwh_t": 5.5220299008907885,
+        "mae_kwh_t": 0.7490931850018471,
+        "correlation": 0.9132556765347808,
+        "precision": 0.9166666666666666,
+        "recall": 0.9806201550387597
+      },
+      "sand": {
+        "truth_mean_kwh_t": 17.155174720611097,
+        "estimate_mean_kwh_t": 11.821437448110785,
+        "mae_kwh_t": 9.612934624303188,
+        "correlation": 0.23659382545148902,
+        "precision": 1.0,
+        "recall": 0.75
+      }
+    }
+  },
+  "model_accuracy_other_plants": [
+    {
+      "plant": {
+        "eta_factor": 0.9762954250011096,
+        "loss_factor": 0.9578263100024719,
+        "lid_factor": 1.1139221647879909
+      },
+      "learned_coefficients": {
+        "intercept": 36.962115830708484,
+        "base": 1.0006264110993826,
+        "melt_loss": 1.0517533582304235,
+        "overshoot": 1.0733357072636633,
+        "holding": 0.9770131367943283,
+        "lid": 1.0831333794280285,
+        "underpower": 1.1712732482357535
+      },
+      "predicted_sec_mae_kwh_t": 8.83269706333142,
+      "predicted_sec_mape_pct": 1.3405070583735257,
+      "best_practice_mae_kwh_t": 11.09749258455787,
+      "best_practice_bias_kwh_t": 9.70295055994862,
+      "total_avoidable_mae_kwh_t": 14.029634328272165,
+      "total_avoidable_truth_mean_kwh_t": 63.243398180590226,
+      "causes": {
+        "overshoot": {
+          "truth_mean_kwh_t": 15.698110815622961,
+          "estimate_mean_kwh_t": 12.551367940352412,
+          "mae_kwh_t": 3.182898330749208,
+          "correlation": 0.9587356695457994,
+          "precision": 1.0,
+          "recall": 0.9933333333333333
+        },
+        "holding": {
+          "truth_mean_kwh_t": 19.395952158674167,
+          "estimate_mean_kwh_t": 16.289578019598107,
+          "mae_kwh_t": 3.1478480233402055,
+          "correlation": 0.9878705556853175,
+          "precision": 1.0,
+          "recall": 0.9504950495049505
+        },
+        "lid": {
+          "truth_mean_kwh_t": 5.589979529941,
+          "estimate_mean_kwh_t": 5.337393453321957,
+          "mae_kwh_t": 0.4760924745688762,
+          "correlation": 0.9875502534078764,
+          "precision": 0.9864253393665159,
+          "recall": 0.9478260869565217
+        },
+        "underpower": {
+          "truth_mean_kwh_t": 4.5802132368157675,
+          "estimate_mean_kwh_t": 5.007465367166827,
+          "mae_kwh_t": 0.8248312325594068,
+          "correlation": 0.8645904517305342,
+          "precision": 0.8892988929889298,
+          "recall": 0.9563492063492064
+        },
+        "sand": {
+          "truth_mean_kwh_t": 17.97914243953634,
+          "estimate_mean_kwh_t": 10.597378294822905,
+          "mae_kwh_t": 9.591040302926245,
+          "correlation": 0.3059189788303481,
+          "precision": 1.0,
+          "recall": 0.7166666666666667
+        }
+      }
+    },
+    {
+      "plant": {
+        "eta_factor": 1.0187718819477145,
+        "loss_factor": 1.025783054452068,
+        "lid_factor": 1.1295347108731384
+      },
+      "learned_coefficients": {
+        "intercept": 13.803468999007773,
+        "base": 1.0000457377019683,
+        "melt_loss": 1.114869765043323,
+        "overshoot": 0.981747720500144,
+        "holding": 1.0023989221740368,
+        "lid": 1.2750354237003818,
+        "underpower": 0.6545083386093807
+      },
+      "predicted_sec_mae_kwh_t": 8.927429177294929,
+      "predicted_sec_mape_pct": 1.4022519997564957,
+      "best_practice_mae_kwh_t": 10.671300515709785,
+      "best_practice_bias_kwh_t": 8.749568698893702,
+      "total_avoidable_mae_kwh_t": 13.755784832964077,
+      "total_avoidable_truth_mean_kwh_t": 61.65588817026706,
+      "causes": {
+        "overshoot": {
+          "truth_mean_kwh_t": 14.199615224354318,
+          "estimate_mean_kwh_t": 10.690604341333852,
+          "mae_kwh_t": 3.522206336269532,
+          "correlation": 0.9497262922208766,
+          "precision": 1.0,
+          "recall": 0.99
+        },
+        "holding": {
+          "truth_mean_kwh_t": 19.861076873000755,
+          "estimate_mean_kwh_t": 16.62735851303725,
+          "mae_kwh_t": 3.2662560955370954,
+          "correlation": 0.9899498833110553,
+          "precision": 1.0,
+          "recall": 0.9528795811518325
+        },
+        "lid": {
+          "truth_mean_kwh_t": 5.5086953510905765,
+          "estimate_mean_kwh_t": 6.337259090560796,
+          "mae_kwh_t": 0.947655452244295,
+          "correlation": 0.9892716684374017,
+          "precision": 0.8930232558139535,
+          "recall": 0.9696969696969697
+        },
+        "underpower": {
+          "truth_mean_kwh_t": 4.867392377145764,
+          "estimate_mean_kwh_t": 2.87372546425191,
+          "mae_kwh_t": 2.0181409320248562,
+          "correlation": 0.9158624346555653,
+          "precision": 1.0,
+          "recall": 0.46875
+        },
+        "sand": {
+          "truth_mean_kwh_t": 17.21910834467564,
+          "estimate_mean_kwh_t": 12.34412631338469,
+          "mae_kwh_t": 8.6865061892196,
+          "correlation": 0.37860613493306083,
+          "precision": 1.0,
+          "recall": 0.7792642140468228
+        }
+      }
+    },
+    {
+      "plant": {
+        "eta_factor": 1.0331004408750073,
+        "loss_factor": 0.9172954667878143,
+        "lid_factor": 0.8728038912377221
+      },
+      "learned_coefficients": {
+        "intercept": 2.4866219455503993,
+        "base": 0.9999645621038002,
+        "melt_loss": 1.1016808710466932,
+        "overshoot": 1.0066338486014905,
+        "holding": 0.943089793707651,
+        "lid": 0.5748508862717358,
+        "underpower": 0.5399283633668627
+      },
+      "predicted_sec_mae_kwh_t": 8.202861005930737,
+      "predicted_sec_mape_pct": 1.3308737079091038,
+      "best_practice_mae_kwh_t": 11.325053941188298,
+      "best_practice_bias_kwh_t": 10.336671531388314,
+      "total_avoidable_mae_kwh_t": 13.38780871834466,
+      "total_avoidable_truth_mean_kwh_t": 56.389635835457774,
+      "causes": {
+        "overshoot": {
+          "truth_mean_kwh_t": 14.205915304598872,
+          "estimate_mean_kwh_t": 11.621483607205768,
+          "mae_kwh_t": 2.6953090075982655,
+          "correlation": 0.9487425684319438,
+          "precision": 1.0,
+          "recall": 0.9966666666666667
+        },
+        "holding": {
+          "truth_mean_kwh_t": 17.440446051621862,
+          "estimate_mean_kwh_t": 16.095781182227967,
+          "mae_kwh_t": 1.7608933632212562,
+          "correlation": 0.9927509800860753,
+          "precision": 1.0,
+          "recall": 0.9536082474226805
+        },
+        "lid": {
+          "truth_mean_kwh_t": 4.014306947197778,
+          "estimate_mean_kwh_t": 2.7671639165755177,
+          "mae_kwh_t": 1.400850736504968,
+          "correlation": 0.9796738541447655,
+          "precision": 1.0,
+          "recall": 0.6975308641975309
+        },
+        "underpower": {
+          "truth_mean_kwh_t": 4.211044712786243,
+          "estimate_mean_kwh_t": 2.3721517056869112,
+          "mae_kwh_t": 1.8822051696187183,
+          "correlation": 0.8770838194780125,
+          "precision": 1.0,
+          "recall": 0.26576576576576577
+        },
+        "sand": {
+          "truth_mean_kwh_t": 16.517922819253016,
+          "estimate_mean_kwh_t": 10.601822453610392,
+          "mae_kwh_t": 8.822339465886131,
+          "correlation": 0.28762057857911666,
+          "precision": 1.0,
+          "recall": 0.7366666666666667
+        }
+      }
+    },
+    {
+      "plant": {
+        "eta_factor": 1.0168634996406436,
+        "loss_factor": 1.057644444588204,
+        "lid_factor": 0.8864355312907298
+      },
+      "learned_coefficients": {
+        "intercept": 12.81218147403098,
+        "base": 0.9999892001524652,
+        "melt_loss": 1.1026060334659078,
+        "overshoot": 0.9932537602962564,
+        "holding": 1.0718866816604602,
+        "lid": 0.7272521085405651,
+        "underpower": 1.7290476783804585
+      },
+      "predicted_sec_mae_kwh_t": 9.052810645762847,
+      "predicted_sec_mape_pct": 1.4208815362585452,
+      "best_practice_mae_kwh_t": 9.141398891676126,
+      "best_practice_bias_kwh_t": 5.6101182030438475,
+      "total_avoidable_mae_kwh_t": 10.776806875103016,
+      "total_avoidable_truth_mean_kwh_t": 60.82428625753766,
+      "causes": {
+        "overshoot": {
+          "truth_mean_kwh_t": 14.541163332955357,
+          "estimate_mean_kwh_t": 11.20661218053915,
+          "mae_kwh_t": 3.3742328362456315,
+          "correlation": 0.9490210496111685,
+          "precision": 1.0,
+          "recall": 0.9933333333333333
+        },
+        "holding": {
+          "truth_mean_kwh_t": 20.460550671205336,
+          "estimate_mean_kwh_t": 18.423767252808766,
+          "mae_kwh_t": 2.2373972888241944,
+          "correlation": 0.9912124879827355,
+          "precision": 0.9948453608247423,
+          "recall": 0.965
+        },
+        "lid": {
+          "truth_mean_kwh_t": 4.460254860346981,
+          "estimate_mean_kwh_t": 3.738694421077046,
+          "mae_kwh_t": 0.9000816830025054,
+          "correlation": 0.9869442505029408,
+          "precision": 0.993421052631579,
+          "recall": 0.8435754189944135
+        },
+        "underpower": {
+          "truth_mean_kwh_t": 4.823664249739027,
+          "estimate_mean_kwh_t": 7.541223099862088,
+          "mae_kwh_t": 2.724660026054646,
+          "correlation": 0.9156865991043664,
+          "precision": 0.8304498269896193,
+          "recall": 0.995850622406639
+        },
+        "sand": {
+          "truth_mean_kwh_t": 16.538653143290947,
+          "estimate_mean_kwh_t": 11.512406174912378,
+          "mae_kwh_t": 9.107495146496028,
+          "correlation": 0.3065013798382599,
+          "precision": 1.0,
+          "recall": 0.7533333333333333
+        }
+      }
+    },
+    {
+      "plant": {
+        "eta_factor": 0.9980963737694274,
+        "loss_factor": 1.1474379326443773,
+        "lid_factor": 0.8386917821786495
+      },
+      "learned_coefficients": {
+        "intercept": 29.058766453247607,
+        "base": 1.001175186658419,
+        "melt_loss": 1.170847227498248,
+        "overshoot": 0.9539337870618423,
+        "holding": 1.0818215795950765,
+        "lid": 1.4627804024492528,
+        "underpower": 0.7470096041515674
+      },
+      "predicted_sec_mae_kwh_t": 9.52739680591589,
+      "predicted_sec_mape_pct": 1.4430585697611364,
+      "best_practice_mae_kwh_t": 12.236612828106567,
+      "best_practice_bias_kwh_t": 10.613357705910397,
+      "total_avoidable_mae_kwh_t": 14.044483256355383,
+      "total_avoidable_truth_mean_kwh_t": 67.92172469967173,
+      "causes": {
+        "overshoot": {
+          "truth_mean_kwh_t": 15.26834429934836,
+          "estimate_mean_kwh_t": 10.961892720277277,
+          "mae_kwh_t": 4.331351071834891,
+          "correlation": 0.952589725911564,
+          "precision": 1.0,
+          "recall": 0.9933333333333333
+        },
+        "holding": {
+          "truth_mean_kwh_t": 25.409703137850393,
+          "estimate_mean_kwh_t": 21.56653865856481,
+          "mae_kwh_t": 3.8470944541666343,
+          "correlation": 0.9962238675844977,
+          "precision": 1.0,
+          "recall": 0.9333333333333333
+        },
+        "lid": {
+          "truth_mean_kwh_t": 4.27578594560756,
+          "estimate_mean_kwh_t": 7.532389980815563,
+          "mae_kwh_t": 3.2580701381979162,
+          "correlation": 0.9761789106248951,
+          "precision": 0.736,
+          "recall": 1.0
+        },
+        "underpower": {
+          "truth_mean_kwh_t": 5.3947943678850665,
+          "estimate_mean_kwh_t": 3.226840852892202,
+          "mae_kwh_t": 2.1891205596413856,
+          "correlation": 0.9058182223672684,
+          "precision": 0.9936305732484076,
+          "recall": 0.5977011494252874
+        },
+        "sand": {
+          "truth_mean_kwh_t": 17.57309694898034,
+          "estimate_mean_kwh_t": 11.398765927171484,
+          "mae_kwh_t": 9.633856095961118,
+          "correlation": 0.33022497317077076,
+          "precision": 1.0,
+          "recall": 0.7233333333333334
+        }
+      }
+    }
+  ],
+  "tapping": {
+    "baseline_overshoot_mean_c": 42.14781718860533,
+    "advised_overshoot_mean_c": 4.750136374982142,
+    "advised_overshoot_sd_c": 4.580324088608121,
+    "advised_below_spec_pct": 15.0,
+    "advised_below_spec_by_5c_pct": 2.3333333333333335,
+    "advised_within_0_15c_pct": 83.33333333333334
+  },
+  "pilot": {
+    "0.4": {
+      "sec_before": 657.5728240663929,
+      "sec_after": 642.6239369241616,
+      "saved_kwh_t": 14.948887142231229,
+      "saved_ci95": [
+        8.845761386450183,
+        20.399381813339136
+      ],
+      "saved_pct": 2.2733432093175874,
+      "waste_by_cause": {
+        "before": {
+          "overshoot": 11.977366067576082,
+          "holding": 19.68065791480974,
+          "lid": 6.390576665060959,
+          "underpower": 5.2199667796429745,
+          "sand": 11.75767555129424
+        },
+        "after": {
+          "overshoot": 6.923155181204856,
+          "holding": 16.368721737058454,
+          "lid": 5.4549131775018305,
+          "underpower": 3.6301079276613004,
+          "sand": 10.433944015852607
+        }
+      },
+      "true_overshoot_c": {
+        "before": 42.982978473671466,
+        "after": 25.913240903737798
+      },
+      "melts_per_period": 240,
+      "annual": {
+        "kwh": 35877.329141354945,
+        "inr_lakh": 2.8701863313083957,
+        "t_co2": 25.47290369036201
+      }
+    },
+    "0.6": {
+      "sec_before": 657.5728240663929,
+      "sec_after": 635.0050559693578,
+      "saved_kwh_t": 22.567768097035014,
+      "saved_ci95": [
+        17.09189457219374,
+        27.706451348645466
+      ],
+      "saved_pct": 3.4319800440470187,
+      "waste_by_cause": {
+        "before": {
+          "overshoot": 11.977366067576082,
+          "holding": 19.68065791480974,
+          "lid": 6.390576665060959,
+          "underpower": 5.2199667796429745,
+          "sand": 11.75767555129424
+        },
+        "after": {
+          "overshoot": 4.401295636826422,
+          "holding": 13.929464765402917,
+          "lid": 4.704519778442279,
+          "underpower": 3.009060661738524,
+          "sand": 9.417324367542262
+        }
+      },
+      "true_overshoot_c": {
+        "before": 42.982978473671466,
+        "after": 16.97622275373097
+      },
+      "melts_per_period": 240,
+      "annual": {
+        "kwh": 54162.64343288403,
+        "inr_lakh": 4.333011474630722,
+        "t_co2": 38.45547683734766
+      }
+    },
+    "0.8": {
+      "sec_before": 657.5728240663929,
+      "sec_after": 628.6200402990744,
+      "saved_kwh_t": 28.952783767318465,
+      "saved_ci95": [
+        23.742505686884193,
+        33.84656286951948
+      ],
+      "saved_pct": 4.402977542209865,
+      "waste_by_cause": {
+        "before": {
+          "overshoot": 11.977366067576082,
+          "holding": 19.68065791480974,
+          "lid": 6.390576665060959,
+          "underpower": 5.2199667796429745,
+          "sand": 11.75767555129424
+        },
+        "after": {
+          "overshoot": 2.478105673216841,
+          "holding": 12.146014028208098,
+          "lid": 3.9064540478597185,
+          "underpower": 2.23606871971096,
+          "sand": 8.65592510279974
+        }
+      },
+      "true_overshoot_c": {
+        "before": 42.982978473671466,
+        "after": 10.495323486066706
+      },
+      "melts_per_period": 240,
+      "annual": {
+        "kwh": 69486.68104156431,
+        "inr_lakh": 5.558934483325145,
+        "t_co2": 49.33554353951066
+      }
+    },
+    "0.9": {
+      "sec_before": 657.5728240663929,
+      "sec_after": 624.9814087693699,
+      "saved_kwh_t": 32.59141529702299,
+      "saved_ci95": [
+        27.472014401870908,
+        37.328460769762785
+      ],
+      "saved_pct": 4.956320289436467,
+      "waste_by_cause": {
+        "before": {
+          "overshoot": 11.977366067576082,
+          "holding": 19.68065791480974,
+          "lid": 6.390576665060959,
+          "underpower": 5.2199667796429745,
+          "sand": 11.75767555129424
+        },
+        "after": {
+          "overshoot": 1.4152570362190506,
+          "holding": 11.038225276173447,
+          "lid": 3.6841826819235215,
+          "underpower": 1.6753495347817593,
+          "sand": 8.155923494868278
+        }
+      },
+      "true_overshoot_c": {
+        "before": 42.982978473671466,
+        "after": 6.829827202832215
+      },
+      "melts_per_period": 240,
+      "annual": {
+        "kwh": 78219.39671285517,
+        "inr_lakh": 6.257551737028414,
+        "t_co2": 55.53577166612717
+      }
+    },
+    "1.0": {
+      "sec_before": 657.5728240663929,
+      "sec_after": 621.7713995283871,
+      "saved_kwh_t": 35.80142453800579,
+      "saved_ci95": [
+        30.936573929525544,
+        40.41094755781141
+      ],
+      "saved_pct": 5.444480554505252,
+      "waste_by_cause": {
+        "before": {
+          "overshoot": 11.977366067576082,
+          "holding": 19.68065791480974,
+          "lid": 6.390576665060959,
+          "underpower": 5.2199667796429745,
+          "sand": 11.75767555129424
+        },
+        "after": {
+          "overshoot": 0.41612129771065665,
+          "holding": 10.126101862598139,
+          "lid": 3.4032603109015382,
+          "underpower": 1.232899033762086,
+          "sand": 7.736421195019456
+        }
+      },
+      "true_overshoot_c": {
+        "before": 42.982978473671466,
+        "after": 3.2655065446306604
+      },
+      "melts_per_period": 240,
+      "annual": {
+        "kwh": 85923.41889121389,
+        "inr_lakh": 6.873873511297111,
+        "t_co2": 61.00562741276186
+      }
+    }
+  },
+  "scheduler": {
+    "asap": {
+      "holding_min": 15.347778971522443,
+      "mould_wait_min": 2.325918331378438,
+      "kwh": 558.4173347658269,
+      "cost_inr": 3987.378989833506
+    },
+    "meltwise": {
+      "holding_min": 7.803279737819988,
+      "mould_wait_min": 2.6695826152711715,
+      "kwh": 549.363935685384,
+      "cost_inr": 3913.866943852414
+    },
+    "holding_reduction": 0.491569447781412
+  }
+}

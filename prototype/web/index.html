@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MeltWise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&display=swap">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="brand">MeltWise <span>Every melt, measured.</span></div>
+    <nav>
+      <button data-view="operator" class="active">Operator</button>
+      <button data-view="manager">Manager</button>
+      <button data-view="planner">Planner</button>
+      <button data-view="buyer">Buyer</button>
+    </nav>
+    <div class="plant" id="plant">Plant A (simulated) · Furnace F1</div>
+  </header>
+
+  <main>
+    <section id="operator" class="view active">
+      <div class="row between">
+        <h1>Live melt</h1>
+        <label class="lang">Prompts in
+          <select id="lang">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ta">தமிழ்</option>
+          </select>
+        </label>
+      </div>
+      <div id="live-empty" class="empty">Waiting for the furnace. Start <code>scripts/live_demo.py</code> to stream a melt from the simulated meter.</div>
+      <div id="live" hidden>
+        <div class="prompt" id="prompt"><span class="prompt-label">MeltWise</span><span id="prompt-text">Melting. No action needed.</span></div>
+        <div class="tiles">
+          <div class="tile"><div class="label">Bath temperature (est.)</div><div class="value" id="t-temp">–</div><div class="sub" id="t-target"></div></div>
+          <div class="tile"><div class="label">Energy this heat</div><div class="value" id="t-energy">–</div>
+            <div class="bar"><div id="t-bar"></div></div><div class="sub" id="t-budget"></div></div>
+          <div class="tile"><div class="label">Power</div><div class="value" id="t-power">–</div><div class="sub" id="t-rated"></div></div>
+          <div class="tile"><div class="label">Lid</div><div class="value" id="t-lid">–</div><div class="sub" id="t-charge"></div></div>
+        </div>
+        <div class="card"><div class="chart-box"><canvas id="live-chart"></canvas></div></div>
+        <div class="card"><h2>Prompts this heat</h2><ol id="prompt-log" class="log"></ol></div>
+      </div>
+    </section>
+
+    <section id="manager" class="view">
+      <h1>Energy per tonne, before and after MeltWise</h1>
+      <div class="tiles" id="kpis"></div>
+      <div class="grid2">
+        <div class="card"><h2>Daily kWh per tonne</h2><div class="chart-box"><canvas id="daily-chart"></canvas></div></div>
+        <div class="card"><h2>Where the extra kWh went (per tonne, average)</h2><div class="chart-box"><canvas id="cause-chart"></canvas></div></div>
+      </div>
+      <div class="card">
+        <h2>Recent melts <span class="hint">click a row for its power curve</span></h2>
+        <table id="melt-table"><thead><tr><th>Started</th><th>Grade</th><th class="num">kWh/t</th><th class="num">Best for this charge</th><th class="num">Avoidable</th><th>Biggest cause</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div class="card" id="melt-detail" hidden>
+        <h2 id="detail-title"></h2>
+        <div class="grid2">
+          <div class="chart-box"><canvas id="detail-chart"></canvas></div>
+          <div id="detail-waste"></div>
+        </div>
+      </div>
+      <p class="note">Data: simulated plant, 30 days observing and 30 days with MeltWise, operators following 60% of prompts. Annual figures assume 2,400 t a year at ₹8/kWh and 0.710 kg CO₂/kWh.</p>
+    </section>
+
+    <section id="planner" class="view">
+      <h1>Melt schedule for today</h1>
+      <p class="lead">MeltWise starts each heat so the metal is ready when the moulds are, instead of straight after the last tap.</p>
+      <div class="tiles" id="plan-kpis"></div>
+      <div class="card">
+        <table id="plan-table"><thead><tr><th>Heat</th><th>Moulds ready</th><th>Today: start</th><th class="num">Today: holding</th><th>MeltWise: start</th><th class="num">MeltWise: holding</th></tr></thead><tbody></tbody></table>
+      </div>
+      <p class="note">One simulated day with moulding-line delays. Over 300 simulated days the scheduler cut holding from 15.3 to 7.8 minutes per heat.</p>
+    </section>
+
+    <section id="buyer" class="view">
+      <div class="row between">
+        <h1>Carbon record per batch</h1>
+        <a class="button" href="/api/carbon.csv">Download CSV</a>
+      </div>
+      <p class="lead">Scope 2 electricity emissions for every melt, from metered energy. Location-based, GHG Protocol; India grid factor 0.710 kg CO₂/kWh (CEA v21.0, FY2024-25).</p>
+      <div class="card">
+        <table id="carbon-table"><thead><tr><th>Batch</th><th>Started</th><th>Grade</th><th class="num">Metal (t)</th><th class="num">kWh</th><th class="num">kWh/t</th><th class="num">kg CO₂</th><th class="num">kg CO₂/t</th></tr></thead><tbody></tbody></table>
+      </div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 """Turn the MeltWise slide files into print-ready HTML for headless Chrome.
 
-Reads deck.json and slides/<id>.html and writes build/:
+Reads deck.json and slides/<id>.html from DECK_DIR (default: this folder) and writes DECK_DIR/build/:
   deck_print.html   every slide as one 1920x1080 page (for the PDF)
   slide_NN.html     one slide per file (for PNG screenshots)
   contact.html      thumbnail grid of the PNGs (for a quick visual check)
   notes.json        speaker notes per slide, in deck order
 """
 import json
+import os
 import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-PROJECT = HERE
-BUILD = HERE / "build"
+PROJECT = Path(os.environ.get("DECK_DIR", HERE)).resolve()
+BUILD = PROJECT / "build"
 
 FONTS = ("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700"
          "&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap")

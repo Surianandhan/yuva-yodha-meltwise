@@ -9,4 +9,6 @@
 - After changing a slide, run `Deck_Source/build.sh`, look at `Deck_Source/build/contact.png` and the changed slide PNGs, then commit the rebuilt PDF and PPTX together with the source change.
 - There is no team name or college. The deck shows only the two members' names and roles.
 - Deliver work as files in this repo, not as hosted links.
-- The hackathon terms forbid "unauthorized AI-generated content" in submitted code. Before writing any prototype code for Stage 2 (from 11 October 2026), check whether the organizers (YuvaYodhaTechHackathon@se.com) have allowed AI assistance.
+- The organizers allowed AI-assisted code for the prototype (confirmed by the team on 26 October 2026). Say so honestly if asked.
+- Prototype numbers come only from `prototype/scripts/evaluate.py` (`prototype/results/metrics.json`). After changing the simulator or models, rerun it and `python -m pytest` in `prototype/`, then regenerate the Phase 2 deck and update `Phase2_Submission/Phase2_Form_Answers.md`.
+- Results are simulated; never present them as plant results.

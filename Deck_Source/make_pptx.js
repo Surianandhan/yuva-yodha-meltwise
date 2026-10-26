@@ -1,10 +1,10 @@
 // Builds the PowerPoint version of the MeltWise deck from the rendered slide images and speaker notes.
-// Usage: node make_pptx.js <output.pptx>
+// Usage: node make_pptx.js <output.pptx> [build_dir]
 const fs = require('fs');
 const path = require('path');
 const PptxGenJS = require('pptxgenjs');
 
-const build = path.join(__dirname, 'build');
+const build = process.argv[3] || path.join(__dirname, 'build');
 const output = process.argv[2];
 const notes = JSON.parse(fs.readFileSync(path.join(build, 'notes.json'), 'utf8'));
 
