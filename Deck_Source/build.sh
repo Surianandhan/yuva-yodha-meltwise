@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
-# Rebuilds MeltWise_Presentation.pdf and .pptx from the slide sources in this folder.
-# Usage: Deck_Source/build.sh [output_dir]    (output_dir defaults to the repo root)
+# Rebuilds a deck's PDF and PPTX from its slide sources.
+# Usage: Deck_Source/build.sh [output_dir] [deck_dir] [name]
+#   defaults: the repo root, this folder (the Phase 1 deck), MeltWise_Presentation
+#   Phase 2:  Deck_Source/build.sh Phase2_Submission Deck_Source/phase2 MeltWise_Phase2_Presentation
 # Needs python3, node, Chrome or Chromium (set CHROME=/path/to/chrome if it isn't found),
 # and internet access for the first `npm install` and for the Google Fonts the slides use.
 set -euo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
 OUT="$(cd "${1:-$HERE/..}" && pwd)"
-BUILD="$HERE/build"
+DECK="$(cd "${2:-$HERE}" && pwd)"
+NAME="${3:-MeltWise_Presentation}"
+BUILD="$DECK/build"
 
 find_chrome() {
   local candidate
@@ -58,17 +62,18 @@ render() {  # render <output file> <chrome args...>
 
 cd "$HERE"
 [ -d node_modules/pptxgenjs ] || npm install --no-audit --no-fund
-python3 build_deck.py
+DECK_DIR="$DECK" python3 build_deck.py
 
-slides="$(python3 -c 'import json; print(len(json.load(open("deck.json"))["order"]))')"
+slides="$(python3 -c 'import json, sys; print(len(json.load(open(sys.argv[1]))["order"]))' "$DECK/deck.json")"
 for i in $(seq 1 "$slides"); do
   n="$(printf %02d "$i")"
   render "$BUILD/slide_$n.png" --window-size=1920,1080 --screenshot="$BUILD/slide_$n.png" "$(uri "$BUILD/slide_$n.html")"
 done
-render "$BUILD/contact.png" --window-size=1920,830 --screenshot="$BUILD/contact.png" "$(uri "$BUILD/contact.html")"
+contact_h=$(( (slides + 3) / 4 * 269 + 8 ))   # 4 thumbnails a row
+render "$BUILD/contact.png" --window-size=1920,$contact_h --screenshot="$BUILD/contact.png" "$(uri "$BUILD/contact.html")"
 render "$BUILD/deck.pdf" --no-pdf-header-footer --print-to-pdf="$BUILD/deck.pdf" "$(uri "$BUILD/deck_print.html")"
 
-node make_pptx.js "$OUT/MeltWise_Presentation.pptx"
-cp "$BUILD/deck.pdf" "$OUT/MeltWise_Presentation.pdf"
-echo "Wrote MeltWise_Presentation.pdf and MeltWise_Presentation.pptx to $OUT"
+node make_pptx.js "$OUT/$NAME.pptx" "$BUILD"
+cp "$BUILD/deck.pdf" "$OUT/$NAME.pdf"
+echo "Wrote $NAME.pdf and $NAME.pptx to $OUT"
 echo "All slides at a glance: $BUILD/contact.png"
