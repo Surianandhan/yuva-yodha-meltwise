@@ -1,0 +1,180 @@
+1
+00:00:00,100 --> 00:00:05,132
+MeltWise: an AI energy copilot for India's induction-furnace foundries.
+
+2
+00:00:05,132 --> 00:00:11,015
+This is our working prototype, for Phase 2 of the Yuva Yodha Energy Tech Hackathon.
+
+3
+00:00:11,915 --> 00:00:16,382
+India's five thousand foundries waste fifty to eighty kilowatt-hours per
+
+4
+00:00:16,382 --> 00:00:20,787
+tonne between melts in the same furnace, from operating practice alone.
+
+5
+00:00:20,787 --> 00:00:23,145
+Nobody sees it until the monthly bill.
+
+6
+00:00:23,145 --> 00:00:26,743
+MeltWise shows it while the metal is still in the furnace.
+
+7
+00:00:27,643 --> 00:00:32,430
+Here is what we built. The furnace meter talks Modbus to an offline-first
+
+8
+00:00:32,430 --> 00:00:37,085
+edge gateway. A physics-informed model, a live advisor, a scheduler and
+
+9
+00:00:37,085 --> 00:00:39,511
+a carbon record run behind a web app.
+
+10
+00:00:39,511 --> 00:00:44,167
+We have no plant yet, so a calibrated furnace simulator plays the plant
+
+11
+00:00:44,167 --> 00:00:48,691
+and the meter, and every result is measured against its ground truth.
+
+12
+00:00:49,991 --> 00:00:54,951
+This melt is streaming live from the simulated Modbus meter, through the
+
+13
+00:00:54,951 --> 00:00:56,536
+gateway, into MeltWise.
+
+14
+00:01:07,542 --> 00:01:12,312
+Within two minutes, MeltWise spots under-powered melting, and tracks the
+
+15
+00:01:12,312 --> 00:01:15,691
+energy used against a target for this exact charge.
+
+16
+00:01:19,606 --> 00:01:24,536
+The red line is furnace power. The dashed line is MeltWise's live estimate
+
+17
+00:01:24,536 --> 00:01:27,800
+of the bath temperature, from the energy balance.
+
+18
+00:01:49,422 --> 00:01:52,054
+Now we cut the network for ten seconds.
+
+19
+00:01:52,054 --> 00:01:57,047
+The gateway keeps every reading in a local outbox, and sends them all when
+
+20
+00:01:57,047 --> 00:01:59,544
+the network returns. Nothing is lost.
+
+21
+00:02:15,271 --> 00:02:20,350
+The bath is near target, so MeltWise asks for a temperature dip, and resets
+
+22
+00:02:20,350 --> 00:02:22,246
+its estimate on the reading.
+
+23
+00:02:22,546 --> 00:02:28,479
+Target reached: tap now. Today, operators overshoot by about forty-two degrees.
+
+24
+00:02:28,479 --> 00:02:31,258
+Following this prompt, by about five.
+
+25
+00:02:31,558 --> 00:02:36,408
+The same prompts appear in the operator's own language: Hindi, and Tamil.
+
+26
+00:02:36,708 --> 00:02:41,849
+If the metal has to wait for the moulds, MeltWise counts the cost of holding.
+
+27
+00:02:43,659 --> 00:02:46,734
+The manager sees energy per tonne for every day:
+
+28
+00:02:46,734 --> 00:02:50,130
+thirty days before MeltWise, and thirty days with it.
+
+29
+00:02:50,130 --> 00:02:52,693
+And where the extra kilowatt-hours went.
+
+30
+00:02:53,593 --> 00:02:56,540
+Any melt opens its power curve and breakdown.
+
+31
+00:02:56,540 --> 00:03:01,452
+This one used six hundred and sixty-seven kilowatt-hours per tonne, against
+
+32
+00:03:01,452 --> 00:03:04,858
+six hundred and ten for best practice on its charge.
+
+33
+00:03:05,758 --> 00:03:10,102
+The planner starts each heat so the metal is ready when the moulds are.
+
+34
+00:03:10,102 --> 00:03:13,956
+Over three hundred simulated days, it cut holding time by half.
+
+35
+00:03:14,856 --> 00:03:19,263
+And every batch gets a metered carbon record, which a buyer can download.
+
+36
+00:03:20,163 --> 00:03:22,909
+We measured everything against ground truth.
+
+37
+00:03:22,909 --> 00:03:27,341
+MeltWise predicts each melt's energy within one point four percent, and
+
+38
+00:03:27,341 --> 00:03:32,459
+finds each practice cause with a correlation of point nine one to point nine nine.
+
+39
+00:03:33,359 --> 00:03:38,487
+In a simulated sixty-day pilot, with operators following sixty percent of
+
+40
+00:03:38,487 --> 00:03:43,403
+prompts, energy per tonne fell by twenty-two point six kilowatt-hours:
+
+41
+00:03:43,403 --> 00:03:48,390
+four point three lakh rupees, and thirty-eight tonnes of carbon dioxide
+
+42
+00:03:48,390 --> 00:03:52,183
+a year, for one furnace. These are simulation results.
+
+43
+00:03:52,183 --> 00:03:54,431
+Next, we test on a real furnace.
+
+44
+00:03:55,331 --> 00:03:57,630
+MeltWise. Every melt, measured.
+
+45
+00:03:57,630 --> 00:04:01,486
+By Surianandhan Sridhar and Sameera Hussainy Pattan.
+
