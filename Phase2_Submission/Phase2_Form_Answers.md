@@ -2,12 +2,12 @@
 
 Every number below comes from `prototype/results/metrics.json` (run `prototype/scripts/evaluate.py`) or from `Supporting_Material/Research_Notes_and_Sources.md`. Deadline: **22 November 2026**.
 
-## Before you submit
+## Status
 
-1. Record the demo video (3–5 min) with `Demo_Video_Script.md`, upload it (YouTube unlisted or Google Drive, "anyone with the link"), and paste the link into field 8.
-2. Give the judges access to the code: the repo is **private**. Either make it public, or add the evaluators as collaborators if the organizers give you their GitHub accounts. Merge the `prototype` branch into `main` first.
-3. Uploads: `MeltWise_Architecture.png` (field 4), `MeltWise_Phase2_Presentation.pdf` (field 11, 13 slides), `MeltWise_Screenshots.zip` (field 12).
-4. Read every answer once and change anything that doesn't sound like you.
+- Demo video: recorded (4:02, narrated with captions) and hosted at the link in field 8.
+- Code: `prototype` merged into `main`; the repo is **public**, so judges can open it.
+- Uploads ready in this folder: `MeltWise_Architecture.png` (field 4), `MeltWise_Phase2_Presentation.pdf` (field 11, 13 slides), `MeltWise_Screenshots.zip` (field 12).
+- The narration uses a computer voice (macOS "Rishi"). To use your own voice instead, re-record with `Demo_Video_Script.md`.
 
 ---
 
@@ -54,13 +54,13 @@ Upload `MeltWise_Architecture.png`.
 Each simulated plant has hidden loss and efficiency constants that MeltWise must learn. Re-running a melt with one practice gap removed gives the true waste from that cause, which we use only for scoring. Tariff and carbon inputs are real published values: ToD rules 2023, FY26 industrial tariffs, CEA grid factor.
 
 ## 8. Demo video link, 3–5 minutes
-[paste your video link]
+https://surianandhan.github.io/yuva-yodha-meltwise/Phase2_Submission/MeltWise_Demo.mp4
 
 ## 9. Live demo, app or website link, if any
 None. It runs locally in two commands (see `prototype/README.md`).
 
 ## 10. Source code repository link
-https://github.com/Surianandhan/yuva-yodha-meltwise (the code is in `prototype/`; make sure the judges can open it, see "Before you submit").
+https://github.com/Surianandhan/yuva-yodha-meltwise (public; the code is in `prototype/`, start with `prototype/README.md`).
 
 ## 11. Presentation deck upload
 Upload `MeltWise_Phase2_Presentation.pdf` (13 slides).
